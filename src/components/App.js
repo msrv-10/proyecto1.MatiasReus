@@ -1,12 +1,12 @@
 import Footer from './Footer';
+import Nav from './Nav';
 function App() {
     return (
     <>
         <header id="header">
             <h1>Titulo</h1>
-            <nav>
-                <a href="http://www.instagram.com">Ping</a>
-            </nav>
+            <img src="/logo192.png"/>
+            <Nav type='header'/>
         </header>
         <Footer/>
     </>

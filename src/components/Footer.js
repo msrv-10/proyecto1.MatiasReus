@@ -1,7 +1,11 @@
+import Nav from './Nav'
 function Footer () {
     return (
-        <footer>
-            <h1><center>Este es el footer</center></h1>
+        <footer id="footer">
+            <h1>Este es el footer</h1>
+            <Nav
+            type='footer'
+            />
         </footer>
     )
 }
