@@ -3,17 +3,20 @@
     margin: 0%;
     box-sizing: border-box;
 }
-#header {
+.header {
     background-color: red;
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 1rem;
     align-items: center;
+    &__image{
+        width: 24px;
+    }
 }
-#nav {
+.nav {
     text-decoration: none;
 }
-#footer{
+.footer{
     background-color: red;
     display: flex;
     align-items: center;

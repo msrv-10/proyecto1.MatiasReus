@@ -1,13 +1,25 @@
+import { useState } from 'react';
 import Footer from './Footer';
-import Nav from './Nav';
+import Main from './Main';
+import Header from './Header';
+
 function App() {
+    const resultado = useState(0)
+    let contador = resultado[0]
+    const setContador = resultado[1]
+    console.log(resultado);
+    //console.log(contador);
+    //contador++
+    //console.log(contador);
+    //let contador = 0
+    const aumentarContador = () =>{
+        console.log('aumentar  contador');
+    }
     return (
     <>
-        <header id="header">
-            <h1>Titulo</h1>
-            <img src="/logo192.png"/>
-            <Nav type='header'/>
-        </header>
+        <Header contador={contador}/>
+        <Main/>
+        <button onClick={aumentarContador}>click</button>
         <Footer/>
     </>
     )

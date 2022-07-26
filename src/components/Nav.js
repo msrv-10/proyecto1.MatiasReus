@@ -1,7 +1,7 @@
-const Nav = (parametros) => {
-  if(parametros.type == "header"){
+const Nav = ({type}) => {
+  if(type === "header"){
   return (
-    <nav id="nav">
+    <nav className="nav">
     <a href="http://www.instagram.com">Ping</a>
     <a href="http://www.instagram.com">Ping</a>
     <a href="http://www.instagram.com">Ping</a>
@@ -9,7 +9,7 @@ const Nav = (parametros) => {
   )
   }else {
     return (
-      <nav>
+      <nav className="nav__footer">
         <a href="http://">Ping</a>
         <a href="http://">Ping</a>
         <a href="http://">Ping</a>
