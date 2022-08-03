@@ -10,7 +10,6 @@ const Contador = (onAdd,initial,stock) => {
         console.log('Se ejecuta');
         setTimeout(()=>{
             console.log('traje todo');
-            //setContador ('Finalizo')
         }, 5000)
         
     },[confirmed])
