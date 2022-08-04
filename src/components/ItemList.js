@@ -1,8 +1,11 @@
-import ItemListContainer from "./ItemListContainer"
+const ItemList = ({productos}) => {  
 
-const ItemList = () => {
   return (
-    <ItemListContainer/>
+    <>
+    {productos.map((producto)=>{
+      return <p>{producto.nombre}</p>
+    })}
+    </>
   )
 }
 export default ItemList

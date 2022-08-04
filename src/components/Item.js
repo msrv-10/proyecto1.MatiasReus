@@ -1,7 +1,8 @@
-import ItemList from "./ItemList"
-
-export const Item = () => {
+export const Item = (producto) => {
   return (
-    <ItemList/>
+    <article>
+      <h2>{producto.nombre}</h2>
+      <p>Precio : ${producto.precio}</p>
+    </article>
   )
 }
