@@ -10,9 +10,9 @@ const Nav = ({type}) => {
   }else {
     return (
       <nav className="nav__footer">
-        <a href="http://">Ping</a>
-        <a href="http://">Ping</a>
-        <a href="http://">Ping</a>
+        <a className="nav__links" href="http://">Ping</a>
+        <a className="nav__links" href="http://">Ping</a>
+        <a className="nav__links" href="http://">Ping</a>
       </nav>
     )
   }
