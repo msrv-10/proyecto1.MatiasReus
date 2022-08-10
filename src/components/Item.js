@@ -1,8 +1,9 @@
-export const Item = (producto) => {
+const Item = ({producto}) => {
   return (
-    <article>
-      <h2>{producto.nombre}</h2>
-      <p>Precio : ${producto.precio}</p>
+    <article className="item">
+        <h2 className="item__name">{producto.nombre}</h2>
+        <p className="item__price">Precio : ${producto.precio}</p>
     </article>
   )
 }
+export default Item

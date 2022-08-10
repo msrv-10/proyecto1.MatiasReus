@@ -1,43 +1,32 @@
 import { useEffect, useState } from "react"
 import ItemList from "./ItemList"
-
-const productosIniciales = [
-    {
-        id: 2,
-        marca: 'pepitos',
-        precio: 200
-    },
-    {
-        id: 3,
-        marca: 'pepes',
-        precio: 500
-    }
-]
-
+const productosNuevos = [{
+    id: 2,
+    nombre: 'zapatillas',
+    precio: 200
+}]
 const ItemListContainer = () => {
 
-    const [productos, setProductos] = useState([])
+    const [productos, setProductos] = useState({})
     const [loading, setLoading] = useState(true)
 
-    useEffect = (() => {
-        console.log('arranca el pedido');
+    useEffect(() => {
         const pedido = new Promise((res, rej) => {
             setTimeout(() => {
-                res(productosIniciales)
+                console.log('se ejecuta el pedido');
+                res(productosNuevos)
             }, 2000)
         })
-
-        pedido.then((resolucion) => {
-            console.log('termino bien');
-            console.log({ resolucion });
-            setProductos(resolucion)
+        pedido.then((aprobada) => {
+            console.log({ aprobada });
+            setProductos(aprobada)
             setLoading(false)
         })
-        pedido.catch((error) => {
-            console.log('termino mal');
+        pedido.catch((desaprobada) => {
+            console.log({ desaprobada });
         })
         pedido.finally(() => {
-            console.log('termino');
+            console.log('termino el pedido');
         })
     }, [])
 
