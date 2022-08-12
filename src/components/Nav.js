@@ -2,7 +2,7 @@ const Nav = ({type}) => {
   if(type === "header"){
   return (
     <nav className="nav">
-    <a href="http://www.instagram.com">Ping</a>
+    <a href="/Teclados.js">Ping</a>
     <a href="http://www.instagram.com">Ping</a>
     <a href="http://www.instagram.com">Ping</a>
     </nav>
