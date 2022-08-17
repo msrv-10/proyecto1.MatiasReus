@@ -1,18 +1,20 @@
-const Nav = ({type}) => {
-  if(type === "header"){
-  return (
-    <nav className="nav">
-    <a href="/Teclados.js">Ping</a>
-    <a href="http://www.instagram.com">Ping</a>
-    <a href="http://www.instagram.com">Ping</a>
-    </nav>
-  )
-  }else {
+import { Link, NavLink } from "react-router-dom"
+const Nav = ({ type }) => {
+  if (type === "header") {
+    return (
+      <nav className="nav">
+        <NavLink className="nav__text" to="/categoria/teclados">Teclados</NavLink>
+        <NavLink className="nav__text" to="/categoria/mouse">Mouse</NavLink>
+        <NavLink className="nav__text" to="/categoria/pad">Pad</NavLink>
+        <NavLink className="nav__text" to="/Cart"><span className="material-symbols-outlined">shopping_cart</span></NavLink>
+      </nav>
+    )
+  } else {
     return (
       <nav className="nav__footer">
-        <a href="http://">Ping</a>
-        <a href="http://">Ping</a>
-        <a href="http://">Ping</a>
+        <Link to="http://">Ping</Link>
+        <Link to="http://">Ping</Link>
+        <Link to="http://">Ping</Link>
       </nav>
     )
   }

@@ -1,32 +1,43 @@
 import { useEffect, useState } from "react"
 import ItemList from "./ItemList"
-const productosNuevos = [{
-    id: 2,
-    nombre: 'zapatillas',
-    precio: 200
-}]
+/* import { useParams } from "react-router-dom"; */
+
+const productosNuevos = [
+    {
+        id: 1,
+        nombre: 'Teclados',
+        info: 'Encontra tu teclado'
+    },
+    {
+        id: 2,
+        nombre: "Mouses",
+        info: "Encontra tu mouse"
+    },
+    {
+        id: 3,
+        nombre: "Pads",
+        info: "Encontra tu pad"
+    }
+]
 const ItemListContainer = () => {
 
     const [productos, setProductos] = useState({})
     const [loading, setLoading] = useState(true)
+    /* const { id } = useParams() */
 
     useEffect(() => {
         const pedido = new Promise((res, rej) => {
             setTimeout(() => {
-                console.log('se ejecuta el pedido');
                 res(productosNuevos)
             }, 2000)
         })
         pedido.then((aprobada) => {
-            console.log({ aprobada });
             setProductos(aprobada)
             setLoading(false)
         })
         pedido.catch((desaprobada) => {
-            console.log({ desaprobada });
         })
         pedido.finally(() => {
-            console.log('termino el pedido');
         })
     }, [])
 

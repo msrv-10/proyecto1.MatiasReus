@@ -1,48 +1,62 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail"
+import { useParams } from "react-router-dom";
 
-const newProducts = [
+const nuevosProductos = [
     {
-        id:1,
-        nombre:'Teclado',
-        imagen:'../../public/teclado.png',
-        detalle:'Teclado mecanico, 60%',
+        id: 1,
+        nombre: 'Teclado',
+        detalle: 'Teclado mecanico, 60%',
         precio: 300
+    },
+    {
+        id: 2,
+        nombre: 'Mouse',
+        detalle: 'Mouse gamer',
+        precio: 150
+    },
+    {
+        id: 3,
+        nombre: 'Pad',
+        detalle: 'Pad XXL',
+        precio: 100
     }
 ]
 
 const ItemDetailContainer = () => {
 
-    const [productos, setProductos] = useState({});
+    const [productos, setProductos] = useState([]);
     const [loading, setLoading] = useState(true);
-    
-    useEffect(()=>{
-        const pedido = new Promise((get,rej)=>{
-            setTimeout(()=>{
-                get(newProducts)
+    const resultado = useParams()
+    console.log(resultado);
+
+    useEffect(() => {
+        const pedido = new Promise((get, rej) => {
+            setTimeout(() => {
+                get(nuevosProductos[0])
             }, 2000)
         })
-        pedido.then((aceptado)=>{
+        pedido.then((aceptado) => {
             setProductos(aceptado)
             setLoading(false)
         })
-        pedido.catch((denegado)=>{
+        pedido.catch((denegado) => {
             setProductos(denegado)
         })
-        pedido.finally(()=>{
+        pedido.finally(() => {
 
         })
     })
 
-    if (loading){
+    if (loading) {
         return (
             <p>Cargando...</p>
         )
-    }else {
+    } else {
         return (
-            <ItemDetail productos={productos}/>
+            <ItemDetail productos={productos} />
         )
     }
-  
+
 }
 export default ItemDetailContainer

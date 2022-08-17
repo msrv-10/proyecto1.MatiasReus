@@ -1,11 +1,13 @@
-const ItemDetail = ({producto}) => {
+const ItemDetail = ({ productos }) => {
   return (
-    <article>
-        <h2>{producto.nombre}</h2>
-        <p>{producto.detalle}</p>
-        <img src={producto.imagen} alt="" />
-        <p>{producto.precio}</p>
-    </article>
+    <section className="list__items">
+      <article className="list__item">
+        <p>ID : {productos.id}</p>
+        <h2>{productos.nombre}</h2>
+        <p>Detalles : {productos.detalle}</p>
+        <p>Precio : ${productos.precio}</p>
+      </article>
+    </section>
   )
 }
 export default ItemDetail
