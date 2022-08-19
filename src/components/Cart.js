@@ -1,6 +1,13 @@
+import Page from "./Page"
+
 const Cart = () => {
+
   return (
-    <div>Cart</div>
-  )
+    <div>
+      <Page titulo="Carrito" subtitulo="Aca estan tus productos">
+        
+      </Page>
+    </div>
+    )
 }
 export default Cart

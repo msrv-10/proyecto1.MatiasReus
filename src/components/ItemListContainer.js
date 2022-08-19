@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import ItemList from "./ItemList"
+import Page from "./Page"
 /* import { useParams } from "react-router-dom"; */
 
 const productosNuevos = [
@@ -47,7 +48,9 @@ const ItemListContainer = () => {
         )
     } else {
         return (
-            <ItemList productos={productos} />
+            <Page titulo="Catalogo" subtitulo="Teclados">
+                <ItemList productos={productos} />
+            </Page>
         )
     }
 }

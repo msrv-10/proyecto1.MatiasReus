@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail"
-import { useParams } from "react-router-dom";
+
 
 const nuevosProductos = [
     {
@@ -27,8 +27,6 @@ const ItemDetailContainer = () => {
 
     const [productos, setProductos] = useState([]);
     const [loading, setLoading] = useState(true);
-    const resultado = useParams()
-    console.log(resultado);
 
     useEffect(() => {
         const pedido = new Promise((get, rej) => {
