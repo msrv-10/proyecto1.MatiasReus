@@ -59,7 +59,7 @@
     position: relative;
     overflow: hidden;
     &:hover{
-        transform: scale(1.5);
+        transform: scale(1.1);
     }
 }
 .button{
@@ -71,4 +71,15 @@
     background-color: white;
     padding: 0.1rem;
     margin-top: 1rem;
+}
+.detail__image{
+    width: 100px;
+    height: auto;
+}
+.detail__text{
+    width: 200px;
+    height: auto;
+}
+.detail__title{
+    width: 20rem;
 }

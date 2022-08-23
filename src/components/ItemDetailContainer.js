@@ -1,60 +1,30 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail"
 
 
-const nuevosProductos = [
-    {
-        id: 1,
-        nombre: 'Teclado',
-        detalle: 'Teclado mecanico, 60%',
-        precio: 300
-    },
-    {
-        id: 2,
-        nombre: 'Mouse',
-        detalle: 'Mouse gamer',
-        precio: 150
-    },
-    {
-        id: 3,
-        nombre: 'Pad',
-        detalle: 'Pad XXL',
-        precio: 100
-    }
-]
-
 const ItemDetailContainer = () => {
 
-    const [productos, setProductos] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [producto, setProducto] = useState([]);
+    const { id } = useParams();
 
     useEffect(() => {
-        const pedido = new Promise((get, rej) => {
-            setTimeout(() => {
-                get(nuevosProductos[0])
-            }, 2000)
-        })
-        pedido.then((aceptado) => {
-            setProductos(aceptado)
-            setLoading(false)
-        })
-        pedido.catch((denegado) => {
-            setProductos(denegado)
-        })
-        pedido.finally(() => {
-
-        })
+        const pedido = fetch('https://fakestoreapi.com/products/' + id)
+        pedido
+            .then((respuesta) => {
+                return respuesta.json()
+            })
+            .then((respuesta) => {
+                setProducto(respuesta)
+            })
+            .catch((denegado) => {
+            })
     })
 
-    if (loading) {
-        return (
-            <p>Cargando...</p>
-        )
-    } else {
-        return (
-            <ItemDetail productos={productos} />
-        )
-    }
+    return (
+        <ItemDetail producto={producto} />
+    )
+
 
 }
 export default ItemDetailContainer

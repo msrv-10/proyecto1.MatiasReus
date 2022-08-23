@@ -6,23 +6,20 @@ import Page from "./Page"
 const productosNuevos = [
     {
         id: 1,
-        nombre: 'Teclados',
-        info: 'Encontra tu teclado'
+        nombre: 'Producto 1',
     },
     {
         id: 2,
-        nombre: "Mouses",
-        info: "Encontra tu mouse"
+        nombre: "Producto 2",
     },
     {
         id: 3,
-        nombre: "Pads",
-        info: "Encontra tu pad"
+        nombre: "Producto 3",
     }
 ]
 const ItemListContainer = () => {
 
-    const [productos, setProductos] = useState({})
+    const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
     /* const { id } = useParams() */
 
@@ -48,7 +45,7 @@ const ItemListContainer = () => {
         )
     } else {
         return (
-            <Page titulo="Catalogo" subtitulo="Teclados">
+            <Page titulo="Catalogo" subtitulo="Todos los productos">
                 <ItemList productos={productos} />
             </Page>
         )
