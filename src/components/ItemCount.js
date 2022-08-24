@@ -15,7 +15,7 @@ const ItemCount = ({ estadoPadre, setEstadoPadre, onAdd }) => {
     }
     return (
         <div>
-            <p>Contador : {contador}</p>
+            {contador > 0 ? <p>Cantidad : {contador}</p> : null}
             <button onClick={sumar}>Sumar</button>
             <button onClick={restar}>Restar</button>
             <button onClick={confirmar}>Confirmar</button>

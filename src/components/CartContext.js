@@ -1,12 +1,17 @@
 import { useState } from 'react';
-import { createContext } from 'react';
+import { createContext, useContext} from 'react';
 
-export const contexto = createContext();
+const contexto = createContext();
 const { Provider } = contexto;
+
+export const useCarrito = () => {
+    return useContext(contexto)
+}
 
 const CustomProvider = (props) => {
 
     const [cantidad, setCantidad] = useState(0);
+    const [carrito, setCarrito] = useState([]);
 
     const agregarProducto = (producto) => {
         setCantidad(cantidad + producto.cantidad)
@@ -15,10 +20,18 @@ const CustomProvider = (props) => {
     const eliminarProducto = () => {
         
     }
+    
+    const vaciarCarrito = () => {
+        setCarrito([])
+    }
+
+    const isInCart = () => {
+        
+    }
 
     const valorDelContexto = {
         cantidad: cantidad,
-        carrito: [],
+        carrito: carrito,
         agregarProducto,
         eliminarProducto,
     }

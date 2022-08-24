@@ -1,11 +1,10 @@
-import { useContext } from "react"
 import ItemCount from "./ItemCount"
 import Page from "./Page"
-import { contexto } from "./CartContext"
+import { useCarrito } from "./CartContext"
 
 const ItemDetail = ({ producto }) => {
 
-  const { agregarProducto } = useContext(contexto)
+  const { agregarProducto } = useCarrito()
 
   const onAdd = (contador) => {
     producto.cantidad = contador

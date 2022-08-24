@@ -1,10 +1,10 @@
-import { useContext } from "react"
 import { NavLink } from "react-router-dom"
-import { contexto } from "./CartContext"
+import { useCarrito } from "./CartContext";
+
 
 const CartWidget = () => {
 
-    const { cantidad } = useContext(contexto);
+    const { cantidad } = useCarrito()
 
     return (
         <NavLink className="nav__text" to="/Cart">
