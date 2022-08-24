@@ -2,19 +2,19 @@ import Footer from './components/Footer';
 import Main from './components/Main';
 import Header from './components/Header';
 import { BrowserRouter } from 'react-router-dom';
-import { createContext } from 'react';
-
-const contexto = createContext();
+import CartContext from './components/CartContext';
 
 function App() {
     return (
-    <>
-        <BrowserRouter>
-        <Header/>
-        <Main/>
-        <Footer/>
-        </BrowserRouter>
-    </>
+        <>
+            <BrowserRouter>
+                <CartContext>
+                    <Header />
+                    <Main />
+                    <Footer />
+                </CartContext>
+            </BrowserRouter>
+        </>
     )
 }
 

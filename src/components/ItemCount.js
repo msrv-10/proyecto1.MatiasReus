@@ -1,20 +1,21 @@
 import { useState } from "react"
 
-const ItemCount = ({ estadoPadre,setEstadoPadre }) => {
+const ItemCount = ({ estadoPadre, setEstadoPadre, onAdd }) => {
 
-    const [estadoHijo, setEstadoHijo] = useState(0)
-    
+    const [contador, setContador] = useState(0)
+
     const sumar = () => {
-        setEstadoHijo(estadoHijo + 1)
+        setContador(contador + 1)
     }
     const restar = () => {
-        setEstadoHijo(estadoHijo - 1)
+        setContador(contador - 1)
     }
     const confirmar = () => {
-        setEstadoPadre(estadoHijo)
+        onAdd(contador)
     }
     return (
         <div>
+            <p>Contador : {contador}</p>
             <button onClick={sumar}>Sumar</button>
             <button onClick={restar}>Restar</button>
             <button onClick={confirmar}>Confirmar</button>

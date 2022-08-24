@@ -1,10 +1,16 @@
-import { useState } from "react"
+import { useContext } from "react"
 import ItemCount from "./ItemCount"
 import Page from "./Page"
+import { contexto } from "./CartContext"
 
 const ItemDetail = ({ producto }) => {
 
-  const [estadoPadre, setEstadoPadre] = useState(0)
+  const { agregarProducto } = useContext(contexto)
+
+  const onAdd = (contador) => {
+    producto.cantidad = contador
+    agregarProducto(producto)
+  }
 
   return (
     <section className="list__items">
@@ -12,11 +18,9 @@ const ItemDetail = ({ producto }) => {
         <Page>
           <p>ID : {producto.id}</p>
           <h2 className="detail__title">{producto.title}</h2>
-          <img src={producto.image} alt=""  className="detail__image"/>
+          <img src={producto.image} alt="" className="detail__image" />
           <p className="detail__text">Detalles : {producto.description}</p>
-          <p>Precio : ${producto.price}</p>
-          <p>Contador : {estadoPadre}</p>
-          <ItemCount estadoPadre={estadoPadre} setEstadoPadre={setEstadoPadre} />
+          <ItemCount onAdd={onAdd} />
         </Page>
       </article>
     </section>

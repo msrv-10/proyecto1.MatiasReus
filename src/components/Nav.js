@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router-dom"
+import CartWidget from "./CartWidget"
 const Nav = ({ type }) => {
   if (type === "header") {
     return (
@@ -6,7 +7,7 @@ const Nav = ({ type }) => {
         <NavLink className="nav__text" to="/categoria/teclados">Teclados</NavLink>
         <NavLink className="nav__text" to="/categoria/mouse">Mouse</NavLink>
         <NavLink className="nav__text" to="/categoria/pad">Pad</NavLink>
-        <NavLink className="nav__text" to="/Cart"><span className="material-symbols-outlined">shopping_cart</span></NavLink>
+        <CartWidget/>
       </nav>
     )
   } else {
