@@ -12,9 +12,11 @@ const CustomProvider = (props) => {
 
     const [cantidad, setCantidad] = useState(0);
     const [carrito, setCarrito] = useState([]);
+    const [precioTotal, setPrecioTotal] = useState(0);
 
     const agregarProducto = (producto) => {
         setCantidad(cantidad + producto.cantidad)
+        setPrecioTotal(precioTotal + producto.precio * producto.cantidad)
     }
 
     const eliminarProducto = () => {
