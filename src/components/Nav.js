@@ -3,9 +3,9 @@ import CartWidget from "./CartWidget"
 const Nav = ({ type }) => {
   return (
       <nav className="nav">
-        <NavLink className="nav__text" to="/categoria/teclados">Teclados</NavLink>
-        <NavLink className="nav__text" to="/categoria/mouse">Mouse</NavLink>
-        <NavLink className="nav__text" to="/categoria/pad">Pad</NavLink>
+        <NavLink className="nav__text" to="/categoria/mensClothing">Men's Clothing</NavLink>
+        <NavLink className="nav__text" to="/categoria/jewelery">Jewelery</NavLink>
+        <NavLink className="nav__text" to="/categoria/electronics">Electronics</NavLink>
         {type === 'header' ? <CartWidget/> : '' }
       </nav>
     )

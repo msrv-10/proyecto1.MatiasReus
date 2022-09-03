@@ -23,6 +23,8 @@ const Cart = () => {
   const handleConfirm = () => {
     const usuario = { nombre, apellido}
     setUsuarios ([...usuarios,usuario])
+    nombre= '';
+    apellido='';
   }
   
   return (
