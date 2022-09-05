@@ -21,17 +21,17 @@ const Cart = () => {
   }
 
   const handleConfirm = () => {
-    const usuario = { nombre, apellido}
-    setUsuarios ([...usuarios,usuario])
+    const usuario = { nombre, apellido }
+    setUsuarios([...usuarios, usuario])
   }
-  
+
   return (
     <div>
       <Page titulo="Carrito" subtitulo="Aca estan tus productos">
         <input type="text" placeholder="Nombre" onChange={handleChangeNombre} value={nombre} />
         <input type="text" placeholder="Apellido" onChange={handleChangeApellido} value={apellido} />
         <button onClick={handleConfirm}>Guardar</button>
-        <CartList usuarios={usuarios}/>
+        <CartList usuarios={usuarios} />
       </Page>
     </div>
   )
